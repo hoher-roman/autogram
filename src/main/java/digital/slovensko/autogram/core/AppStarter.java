@@ -34,6 +34,7 @@ public class AppStarter {
     public static void start(String[] args) {
         if (MsixPackage.isCurrent())
             MsixPackage.useTcpForNioPipes();
+        SigningResources.useTemporaryFilesForContainers();
 
         try {
             CommandLine cmd = new DefaultParser().parse(options, args);
